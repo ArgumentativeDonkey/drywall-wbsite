@@ -74,6 +74,10 @@
             box-sizing: border-box;
             text-align: left;
             margin-left: 20%; /* Pushes the box to the right to clear the menu */
+            
+            /* ---- SCROLL BAR STYLES ---- */
+            max-height: 80vh; /* Limits the height of the box */
+            overflow-y: auto; /* Adds a vertical scroll bar when content exceeds height */
         }
         
         .content-box h2 {
@@ -130,6 +134,7 @@
                 margin-left: 5%;
                 margin-right: 5%;
                 width: 90%;
+                max-height: 60vh; /* Adjusts height for smaller screens */
             }
 
             h1 {
@@ -187,16 +192,25 @@
             <p class="news-date">September 5, 2025</p>
             <p>We're hitting the road this fall! Join us on tour in a city near you. Tickets are on sale now. Check our <a href="#" target="_blank">tour page</a> for a full list of dates and to purchase tickets.</p>
         </div>
+        
         <div class="news-item">
-            <h3>Drywall Announces Fall Tour Dates</h3>
-            <p class="news-date">September 5, 2025</p>
-            <p>We're hitting the road this fall! Join us on tour in a city near you. Tickets are on sale now. Check our <a href="#" target="_blank">tour page</a> for a full list of dates and to purchase tickets.</p>
+            <h3>New Merch is Live!</h3>
+            <p class="news-date">August 20, 2025</p>
+            <p>The new line of Drywall merchandise is now available on our website! Grab a new t-shirt, hoodie, or vinyl record before they're gone. Head over to our <a href="#">merch store</a> to see the collection.</p>
         </div>
+        
         <div class="news-item">
-            <h3>Drywall Announces Fall Tour Dates</h3>
-            <p class="news-date">September 5, 2025</p>
-            <p>We're hitting the road this fall! Join us on tour in a city near you. Tickets are on sale now. Check our <a href="#" target="_blank">tour page</a> for a full list of dates and to purchase tickets.</p>
+            <h3>Behind the Scenes: The Making of 'Echoes'</h3>
+            <p class="news-date">August 10, 2025</p>
+            <p>We've just released a mini-documentary about the creative process behind our upcoming album, 'Echoes.' See us in the studio, get a sneak peek at our new songs, and hear from the band about our inspirations. Watch it on our <a href="#">YouTube channel</a>!</p>
         </div>
+        
+        <div class="news-item">
+            <h3>New Single 'Road to Nowhere' Out Now</h3>
+            <p class="news-date">July 25, 2025</p>
+            <p>Our new single 'Road to Nowhere' is officially here! It's the first taste of our new album and we hope you love it as much as we do. Stream it everywhere now!</p>
+        </div>
+
     </div>
 </body>
 </html>
