@@ -21,6 +21,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: margin-left 0.3s;
+        }
+
+        body.menu-open {
+            overflow: hidden;
         }
 
         /* Fixed container for the header and menu */
@@ -32,6 +37,7 @@
             flex-direction: column;
             align-items: flex-start;
             z-index: 100;
+            transition: transform 0.3s ease-in-out;
         }
 
         h1 {
@@ -113,31 +119,52 @@
             text-decoration: underline;
         }
 
-        /* Responsive adjustments */
+        /* Mobile specific styles for the swipable menu */
         @media screen and (max-width: 768px) {
             body {
                 flex-direction: column;
                 justify-content: flex-start;
-                padding: 2rem 0;
+                padding: 0;
                 align-items: center;
+                transition: transform 0.3s ease-in-out;
             }
 
             .fixed-header-container {
-                position: static;
-                align-self: flex-start;
-                margin-left: 5%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 70%;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 20px;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
             }
 
-            .content-box {
-                margin-top: 2rem;
-                margin-left: 5%;
-                margin-right: 5%;
-                width: 90%;
-                max-height: 60vh;
+            .fixed-header-container.menu-open {
+                transform: translateX(0);
             }
 
             h1 {
                 font-size: 5rem;
+            }
+            
+            .menu-toggle {
+                display: block;
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                color: white;
+                font-size: 2rem;
+                cursor: pointer;
+                z-index: 101;
+                user-select: none;
+            }
+
+            .content-box {
+                margin: 2rem 5% 0 5%;
+                width: 90%;
+                max-height: 60vh;
             }
 
             .content-box h2 {
@@ -159,7 +186,8 @@
     </style>
 </head>
 <body>
-    <div class="fixed-header-container">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="fixed-header-container" id="menu-container">
         <h1>Drywall</h1>
         <div class="menu">
             <ul>
@@ -209,7 +237,15 @@
             <p class="news-date">July 25, 2025</p>
             <p>Our new single 'Road to Nowhere' is officially here! It's the first taste of our new album and we hope you love it as much as we do. Stream it everywhere now!</p>
         </div>
-
     </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu-container');
+            const body = document.body;
+            menu.classList.toggle('menu-open');
+            body.classList.toggle('menu-open');
+        }
+    </script>
 </body>
 </html>
