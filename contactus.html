@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Drywall</title>
     <style>
+        /* This entire style block is copied from news.html for consistency */
         html, body {
             margin: 0;
             padding: 0;
@@ -17,18 +18,22 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            display: flex;
-            align-items: center; /* vertical centering */
-            justify-content: flex-start; /* horizontal: start from left */
             color: white;
-            padding-left: 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Container for menu and header */
-        .container {
+        /* Fixed container for the header and menu */
+        .fixed-header-container {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 5%;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            z-index: 100;
         }
 
         h1 {
@@ -60,7 +65,6 @@
             text-decoration: underline;
         }
 
-        /* White box for contact content, now aligned with other content */
         .content-box {
             background-color: rgba(255, 255, 255, 0.9);
             color: black;
@@ -68,21 +72,22 @@
             border-radius: 10px;
             max-width: 600px;
             width: 90%;
-            margin-left: 5%; /* Aligns the box to the right of the menu content */
             box-sizing: border-box;
+            /* This margin creates space for the fixed menu on the left */
+            margin-left: 20%;
         }
         
         .content-box h2 {
             font-size: 3rem;
             margin-top: 0;
         }
-        
+
         .content-box p {
             font-size: 1.2rem;
             line-height: 1.5;
             margin: 1rem 0;
         }
-        
+
         .content-box a {
             color: #007bff;
             text-decoration: none;
@@ -92,32 +97,71 @@
         .content-box a:hover {
             text-decoration: underline;
         }
-
-        /* Responsive adjustments */
+        
+        .menu-toggle {
+            display: none;
+        }
+        
         @media screen and (max-width: 768px) {
-            h1 {
-                font-size: 5rem;
-            }
-
             body {
-                flex-direction: column; /* Stacks items vertically on mobile */
-                align-items: flex-start; /* Keeps content aligned left */
-                padding-top: 2rem;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 0;
+                align-items: center;
             }
 
-            .container {
-                align-items: flex-start; /* Ensure alignment for the menu */
+            .fixed-header-container {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 70%;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 20px;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .fixed-header-container.menu-open {
+                transform: translateX(0);
+            }
+
+            h1 {
+                font-size: 4rem;
+            }
+            
+            .menu-toggle {
+                display: block;
+                position: fixed;
+                top: 25px;
+                left: 20px;
+                color: black;
+                text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+                font-size: 2rem;
+                cursor: pointer;
+                z-index: 102;
+                user-select: none;
+                transition: left 0.3s ease-in-out, color 0.3s ease-in-out;
+            }
+            
+            .menu-toggle.menu-open {
+                left: calc(70% + 20px);
+                color: white;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
             }
 
             .content-box {
-                margin-left: 0;
                 margin-top: 2rem;
+                /* Reset margin-left for stacked mobile view */
+                margin-left: 5%;
+                margin-right: 5%;
+                width: 90%;
             }
-            
+
             .content-box h2 {
                 font-size: 2rem;
             }
-            
+
             .content-box p {
                 font-size: 1rem;
             }
@@ -133,7 +177,8 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="menu-toggle" onclick="toggleMenu()" id="menu-toggle">☰</div>
+    <div class="fixed-header-container" id="menu-container">
         <h1>Drywall</h1>
         <div class="menu">
             <ul>
@@ -152,5 +197,20 @@
         <p><strong>Manager:</strong> Jane Doe, <a href="tel:+15551234567">(555) 123-4567</a></p>
         <p>Follow us on <a href="#" target="_blank">Instagram</a>, <a href="#" target="_blank">Twitter</a>, and <a href="#" target="_blank">Facebook</a>!</p>
     </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu-container');
+            const toggleButton = document.getElementById('menu-toggle');
+            menu.classList.toggle('menu-open');
+            toggleButton.classList.toggle('menu-open');
+
+            if (toggleButton.classList.contains('menu-open')) {
+                toggleButton.innerHTML = '&times;';
+            } else {
+                toggleButton.innerHTML = '☰';
+            }
+        }
+    </script>
 </body>
 </html>
