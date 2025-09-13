@@ -10,32 +10,25 @@ html, body {
   height: 100%;
   width: 100%;
   font-family: 'Courier New', Courier, monospace;
-}
-
-/* Background */
-body {
   background-image: url("IMG_0882-modified.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
-/* Header + Menu (exact same as Home) */
+/* Container for menu + header (desktop) */
 .container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding-left: 40px;
-  padding-top: 40px; /* maintains same top spacing as Home */
+  padding-top: 40px;
 }
 
 .container h1 {
   font-size: 90px;
   color: white;
-  margin: 0 0 40px 0; /* spacing below header for menu */
+  margin: 0 0 40px 0;
 }
 
 /* Vertical menu */
@@ -54,22 +47,25 @@ body {
 .menu ul li a {
   color: white;
   text-decoration: none;
+  display: block;
 }
 
 .menu ul li a:hover {
   text-decoration: underline;
 }
 
-/* Contact box */
+/* Desktop contact box: absolute center */
 .contact-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: rgba(255,255,255,0.95);
+  padding: 50px;
   max-width: 500px;
   width: 90%;
-  padding: 50px;
   text-align: left;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  align-self: center; /* centers horizontally without moving menu */
-  margin-top: 60px; /* spacing below menu */
 }
 
 .contact-box h1 {
@@ -81,8 +77,8 @@ body {
 .contact-box p,
 .contact-box a {
   font-size: 18px;
-  line-height: 1.6;
   color: black;
+  line-height: 1.6;
   text-decoration: none;
 }
 
@@ -90,17 +86,26 @@ body {
   text-decoration: underline;
 }
 
-/* Mobile adjustments only */
+/* Mobile-only layout */
 @media screen and (max-width: 768px) {
+  /* Container same alignment but reduce spacing */
+  .container {
+    padding-left: 20px;
+    padding-top: 20px;
+  }
   .container h1 {
     font-size: 50px;
   }
   .menu ul li {
     padding: 10px 0;
   }
+
+  /* Contact box stacked below menu, not absolute */
   .contact-box {
+    position: static;
+    transform: none;
+    margin-top: 20px;
     padding: 30px;
-    margin-top: 30px; /* reduce spacing for mobile */
     width: 95%;
   }
   .contact-box h1 {
@@ -115,7 +120,6 @@ body {
 </head>
 <body>
 
-<!-- Menu + Header -->
 <div class="container">
   <h1>Drywall</h1>
   <div class="menu">
@@ -128,7 +132,6 @@ body {
   </div>
 </div>
 
-<!-- Contact Box -->
 <div class="contact-box">
   <h1>Contact Us</h1>
   <p>Email: <a href="mailto:contact@drywallband.com">contact@drywallband.com</a></p>
