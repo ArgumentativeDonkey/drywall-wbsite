@@ -20,8 +20,8 @@
             color: white;
             display: flex;
             align-items: center;
-            justify-content: center;
-            transition: margin-left 0.3s;
+            justify-content: flex-start;
+            padding-left: 5%;
         }
 
         body.menu-open {
@@ -125,8 +125,7 @@
                 flex-direction: column;
                 justify-content: flex-start;
                 padding: 0;
-                align-items: center;
-                transition: transform 0.3s ease-in-out;
+                align-items: flex-start;
             }
 
             .fixed-header-container {
@@ -146,7 +145,7 @@
             }
 
             h1 {
-                font-size: 4rem; /* Adjusted font size for mobile */
+                font-size: 4rem;
             }
             
             .menu-toggle {
@@ -158,12 +157,23 @@
                 text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
                 font-size: 2rem;
                 cursor: pointer;
-                z-index: 102; /* Ensures the button is on top of the menu */
+                z-index: 102;
                 user-select: none;
             }
 
+            .menu-toggle.menu-open {
+                color: white;
+                text-shadow: none;
+                position: fixed;
+                top: 25px;
+                right: 20px;
+                left: auto;
+            }
+
             .content-box {
-                margin: 2rem 5% 0 5%;
+                margin-top: 2rem;
+                margin-left: 5%;
+                margin-right: 5%;
                 width: 90%;
                 max-height: 60vh;
             }
@@ -187,7 +197,7 @@
     </style>
 </head>
 <body>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="menu-toggle" onclick="toggleMenu()" id="menu-toggle">☰</div>
     <div class="fixed-header-container" id="menu-container">
         <h1>Drywall</h1>
         <div class="menu">
@@ -239,14 +249,3 @@
             <p>Our new single 'Road to Nowhere' is officially here! It's the first taste of our new album and we hope you love it as much as we do. Stream it everywhere now!</p>
         </div>
     </div>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu-container');
-            const body = document.body;
-            menu.classList.toggle('menu-open');
-            body.classList.toggle('menu-open');
-        }
-    </script>
-</body>
-</html>
