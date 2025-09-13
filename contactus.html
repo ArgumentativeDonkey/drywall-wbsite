@@ -33,24 +33,15 @@
 
         /* Left-aligned vertical menu */
         /* Left-aligned vertical menu */
-        .menu {
-            position: fixed;
-            /* keeps it in place */
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            /* ensures menu stays on top of other elements */
-        }
-
         .menu ul {
             list-style: none;
             padding: 0;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* vertical */
         }
 
         .menu ul li {
-            padding: 10px 0;
+            padding: 15px 0;
         }
 
         .menu ul li a {
@@ -62,6 +53,7 @@
         .menu ul li a:hover {
             text-decoration: underline;
         }
+
 
 
         /* Centered white contact box */
