@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Drywall - Contact</title>
     <style>
-        html, body {
+        html,
+        body {
             margin: 0;
             padding: 0;
             height: 100%;
@@ -12,7 +14,8 @@
 
         body {
             font-family: 'Courier New', Courier, monospace;
-            background-image: url("IMG_0882-modified.jpg"); /* Replace with your image path */
+            background-image: url("IMG_0882-modified.jpg");
+            /* Replace with your image path */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -23,10 +26,14 @@
         }
 
         /* Left-aligned vertical menu */
+        /* Left-aligned vertical menu */
         .menu {
-            position: absolute;
+            position: fixed;
+            /* keeps it in place */
             top: 20px;
             left: 20px;
+            z-index: 1000;
+            /* ensures menu stays on top of other elements */
         }
 
         .menu ul {
@@ -50,6 +57,7 @@
             text-decoration: underline;
         }
 
+
         /* Centered white contact box */
         .contact-box {
             background-color: rgba(255, 255, 255, 0.95);
@@ -57,7 +65,7 @@
             max-width: 500px;
             width: 90%;
             text-align: left;
-            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         }
 
         /* Contact heading */
@@ -69,7 +77,8 @@
         }
 
         /* Contact content */
-        .contact-box p, .contact-box a {
+        .contact-box p,
+        .contact-box a {
             font-size: 18px;
             color: black;
             line-height: 1.6;
@@ -90,12 +99,14 @@
                 font-size: 40px;
             }
 
-            .contact-box p, .contact-box a {
+            .contact-box p,
+            .contact-box a {
                 font-size: 16px;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Left-aligned vertical menu -->
     <div class="menu">
@@ -115,9 +126,10 @@
         <p>Address: 123 Main St, City, State</p>
         <p>Follow us on social media:</p>
         <p>
-            <a href="#">Instagram</a> | 
+            <a href="#">Instagram</a> |
             <a href="#">Email</a>
         </p>
     </div>
 </body>
+
 </html>
