@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Drywall</title>
+    <style>
+        /* This entire style block is copied from news.html for consistency */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-image: url("IMG_0882-modified.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Fixed container for the header and menu */
+        .fixed-header-container {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            z-index: 100;
+        }
+
+        h1 {
+            font-size: 8rem;
+            color: white;
+            margin: 0 0 2rem 0;
+        }
+
+        /* Menu styles */
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu ul li {
+            padding: 1rem 0;
+        }
+
+        .menu ul li a {
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        .menu ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: black;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            box-sizing: border-box;
+            /* This margin creates space for the fixed menu on the left */
+            margin-left: 20%;
+        }
+        
+        .content-box h2 {
+            font-size: 3rem;
+            margin-top: 0;
+        }
+
+        .content-box p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin: 1rem 0;
+        }
+
+        .content-box a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .content-box a:hover {
+            text-decoration: underline;
+        }
+        
+        .menu-toggle {
+            display: none;
+        }
+        
+        @media screen and (max-width: 768px) {
+            body {
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 0;
+                align-items: center;
+            }
+
+            .fixed-header-container {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 70%;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 20px;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .fixed-header-container.menu-open {
+                transform: translateX(0);
+            }
+
+            h1 {
+                font-size: 4rem;
+            }
+            
+            .menu-toggle {
+                display: block;
+                position: fixed;
+                top: 25px;
+                left: 20px;
+                color: black;
+                text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+                font-size: 2rem;
+                cursor: pointer;
+                z-index: 102;
+                user-select: none;
+                transition: left 0.3s ease-in-out, color 0.3s ease-in-out;
+            }
+            
+            .menu-toggle.menu-open {
+                left: calc(70% + 20px);
+                color: white;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            }
+
+            .content-box {
+                margin-top: 2rem;
+                /* Reset margin-left for stacked mobile view */
+                margin-left: 5%;
+                margin-right: 5%;
+                width: 90%;
+            }
+
+            .content-box h2 {
+                font-size: 2rem;
+            }
+
+            .content-box p {
+                font-size: 1rem;
+            }
+
+            .menu ul li {
+                padding: 0.8rem 0;
+            }
+
+            .menu ul li a {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-toggle" onclick="toggleMenu()" id="menu-toggle">☰</div>
+    <div class="fixed-header-container" id="menu-container">
+        <h1>Drywall</h1>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><u><a href="about.html">About</a></u></li>
+                <li><a href="contactus.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="content-box">
+        <h2>About us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a tristique lorem, nec congue justo. Nullam vestibulum congue nisi. Fusce pulvinar sapien vitae sodales ornare. Aliquam tortor purus, dapibus ac mattis euismod, scelerisque in mauris. Duis non lorem tempus tortor varius sollicitudin in eu nibh. Nunc sollicitudin ultrices nisl, ut pellentesque magna varius ut. Fusce sollicitudin in massa eget mattis. Curabitur eu volutpat ante, eget ornare nunc. </p>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu-container');
+            const toggleButton = document.getElementById('menu-toggle');
+            menu.classList.toggle('menu-open');
+            toggleButton.classList.toggle('menu-open');
+
+            if (toggleButton.classList.contains('menu-open')) {
+                toggleButton.innerHTML = '&times;';
+            } else {
+                toggleButton.innerHTML = '☰';
+            }
+        }
+    </script>
+</body>
+</html>
