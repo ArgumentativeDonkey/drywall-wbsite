@@ -18,20 +18,20 @@
             background-position: center;
             background-repeat: no-repeat;
             color: white;
-            display: flex; /* Enables Flexbox for centering */
-            align-items: center; /* Vertically centers the content */
-            justify-content: center; /* Horizontally centers the content */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Fixed container for the header and menu */
         .fixed-header-container {
-            position: fixed; /* Fixes the position relative to the viewport */
+            position: fixed;
             top: 5%;
             left: 5%;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            z-index: 100; /* Ensures the menu stays on top of other content */
+            z-index: 100;
         }
 
         h1 {
@@ -67,52 +67,68 @@
         .content-box {
             background-color: rgba(255, 255, 255, 0.9);
             color: black;
-            padding: 3rem; /* Increased padding for a more spacious look */
+            padding: 3rem;
             border-radius: 10px;
             max-width: 600px;
             width: 90%;
-            text-align: center; /* Centers text within the box */
+            text-align: center;
         }
-        
+
         .content-box h2 {
             font-size: 3rem;
             margin-top: 0;
         }
-        
+
         .content-box p {
             font-size: 1.2rem;
             line-height: 1.5;
             margin: 1rem 0;
         }
-        
+
         .content-box a {
             color: #007bff;
             text-decoration: none;
             font-weight: bold;
         }
-        
+
         .content-box a:hover {
             text-decoration: underline;
         }
 
         /* Responsive adjustments */
         @media screen and (max-width: 768px) {
+            body {
+                flex-direction: column; /* Stacks items vertically on mobile */
+                justify-content: flex-start; /* Aligns content to the top */
+                padding: 2rem 0; /* Adds vertical spacing */
+            }
+
+            .fixed-header-container {
+                position: static; /* Removes fixed position on mobile */
+                align-self: flex-start; /* Keeps the menu aligned to the left */
+                margin-left: 5%;
+            }
+
+            .content-box {
+                margin-top: 2rem; /* Adds space between menu and content box */
+            }
+
             h1 {
                 font-size: 5rem;
             }
-            .fixed-header-container {
-                top: 2%;
-                left: 2%;
-            }
+
             .content-box h2 {
                 font-size: 2rem;
             }
+
             .content-box p {
                 font-size: 1rem;
             }
+
             .menu ul li {
                 padding: 0.8rem 0;
             }
+
             .menu ul li a {
                 font-size: 1.2rem;
             }
@@ -131,7 +147,7 @@
             </ul>
         </div>
     </div>
-    
+
     <div class="content-box">
         <h2>Contact Us</h2>
         <p>For bookings, press, or general inquiries, please reach out to us!</p>
