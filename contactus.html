@@ -16,7 +16,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      position: relative; /* allows absolute positioning */
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -33,12 +33,12 @@
     }
 
     .container h1 {
-      font-size: 40px;
+      font-size: 90px; /* match home */
       color: white;
-      margin: 0 0 20px 0;
+      margin: 0 0 40px 0; /* match home */
     }
 
-    /* Menu styles */
+    /* Menu styles (same as home) */
     .menu ul {
       list-style: none;
       padding: 0;
@@ -48,7 +48,7 @@
     }
 
     .menu ul li {
-      padding: 10px 0;
+      padding: 15px 0; /* match home */
     }
 
     .menu ul li a {
@@ -91,11 +91,11 @@
 
     /* Responsive */
     @media screen and (max-width: 768px) {
-      .container {
-        left: 20px;
-      }
       .container h1 {
-        font-size: 30px;
+        font-size: 60px; /* match home */
+      }
+      .menu ul li {
+        padding: 12px 0; /* match home */
       }
       .contact-box {
         padding: 30px;
