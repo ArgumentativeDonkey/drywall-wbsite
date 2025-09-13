@@ -1,92 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Drywall</title>
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
+  <meta charset="UTF-8">
+  <title>Drywall - Contact</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
 
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            background-image: url("IMG_0882-modified.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-image: url("IMG_0882-modified.jpg"); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative; /* allows absolute positioning */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        /* Container pinned top-left */
-        .container {
-            position: absolute;
-            top: 20px;
-            left: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
+    /* Menu container pinned top-left */
+    .container {
+      position: absolute;
+      top: 20px;
+      left: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
-        h1 {
-            font-size: 90px;
-            color: white;
-            margin: 0 0 40px 0;
-        }
+    .container h1 {
+      font-size: 40px;
+      color: white;
+      margin: 0 0 20px 0;
+    }
 
-        /* Menu styles */
-        .menu ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-direction: column; /* vertical */
-        }
+    /* Menu styles */
+    .menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .menu ul li {
-            padding: 15px 0;
-        }
+    .menu ul li {
+      padding: 10px 0;
+    }
 
-        .menu ul li a {
-            color: white;
-            text-decoration: none;
-            display: block;
-        }
+    .menu ul li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
 
-        .menu ul li a:hover {
-            text-decoration: underline;
-        }
+    .menu ul li a:hover {
+      text-decoration: underline;
+    }
 
-        /* Responsive */
-        @media screen and (max-width: 768px) {
-            h1 {
-                font-size: 60px;
-            }
+    /* Centered white contact box */
+    .contact-box {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 50px;
+      max-width: 500px;
+      width: 90%;
+      text-align: left;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
 
-            .container {
-                left: 20px;
-            }
+    .contact-box h1 {
+      font-size: 60px;
+      margin: 0 0 20px 0;
+      color: black;
+    }
 
-            .menu ul li {
-                padding: 12px 0;
-            }
-        }
-    </style>
+    .contact-box p,
+    .contact-box a {
+      font-size: 18px;
+      color: black;
+      line-height: 1.6;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .container {
+        left: 20px;
+      }
+      .container h1 {
+        font-size: 30px;
+      }
+      .contact-box {
+        padding: 30px;
+      }
+      .contact-box h1 {
+        font-size: 40px;
+      }
+      .contact-box p,
+      .contact-box a {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Drywall</h1>
-        <div class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contactus.html">Contact</a></li>
-            </ul>
-        </div>
+  <!-- Menu/Header -->
+  <div class="container">
+    <h1>Drywall</h1>
+    <div class="menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contactus.html">Contact</a></li>
+      </ul>
     </div>
+  </div>
+
+  <!-- Centered contact box -->
+  <div class="contact-box">
+    <h1>Contact Us</h1>
+    <p>Email: <a href="mailto:contact@drywallband.com">contact@drywallband.com</a></p>
+    <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+    <p>Address: 123 Main St, City, State</p>
+    <p>Follow us on social media:</p>
+    <p>
+      <a href="#">Instagram</a> |
+      <a href="#">Email</a>
+    </p>
+  </div>
 </body>
 </html>
