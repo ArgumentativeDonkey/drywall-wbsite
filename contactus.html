@@ -18,26 +18,24 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
 }
 
-/* Container for menu + header */
+/* Container for menu + header (desktop layout identical to Home) */
 .container {
-  padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding-left: 40px;
+  padding-top: 40px;
 }
 
-/* Header */
 .container h1 {
   font-size: 90px;
   color: white;
-  margin: 0 0 20px 0;
+  margin: 0 0 40px 0;
 }
 
-/* Menu */
+/* Menu styles */
 .menu ul {
   list-style: none;
   padding: 0;
@@ -59,12 +57,12 @@ body {
   text-decoration: underline;
 }
 
-/* Contact box */
+/* Contact box (desktop centered horizontally below menu, does not move menu) */
 .contact-box {
   background-color: rgba(255,255,255,0.95);
   max-width: 500px;
   width: 90%;
-  margin: 40px auto; /* centers horizontally and adds spacing from top */
+  margin: 40px auto 0 auto; /* centers horizontally, top margin for spacing */
   padding: 50px;
   text-align: left;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
@@ -88,10 +86,11 @@ body {
   text-decoration: underline;
 }
 
-/* Responsive adjustments */
+/* Mobile adjustments only */
 @media screen and (max-width: 768px) {
   .container {
-    padding: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
   }
   .container h1 {
     font-size: 50px;
@@ -101,7 +100,7 @@ body {
   }
   .contact-box {
     padding: 30px;
-    margin: 20px auto;
+    margin-top: 20px; /* maintain spacing below menu */
   }
   .contact-box h1 {
     font-size: 40px;
