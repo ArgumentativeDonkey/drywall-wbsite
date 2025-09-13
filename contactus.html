@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Drywall</title>
+    <title>Contact Us - The Band</title>
     <style>
         html, body {
             margin: 0;
@@ -17,25 +17,25 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            display: flex;
-            flex-direction: column; /* Stacks elements vertically */
-            align-items: center; /* Centers items horizontally */
             color: white;
-            padding-top: 5%; /* Adds space from the top */
+            display: flex; /* Enables Flexbox for centering */
+            align-items: center; /* Vertically centers the content */
+            justify-content: center; /* Horizontally centers the content */
         }
 
-        /* Container for menu and header, kept on the left */
-        .header-container {
+        /* Fixed container for the header and menu */
+        .fixed-header-container {
+            position: fixed; /* Fixes the position relative to the viewport */
+            top: 5%;
+            left: 5%;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            padding-left: 5%; /* Fluid padding */
-            align-self: flex-start; /* Aligns this container to the left */
-            margin-bottom: 2rem;
+            z-index: 100; /* Ensures the menu stays on top of other content */
         }
 
         h1 {
-            font-size: 8rem; /* Use rem for scalability */
+            font-size: 8rem;
             color: white;
             margin: 0 0 2rem 0;
         }
@@ -65,14 +65,13 @@
 
         /* Centered white box for contact content */
         .content-box {
-            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            background-color: rgba(255, 255, 255, 0.9);
             color: black;
-            padding: 2rem;
+            padding: 3rem; /* Increased padding for a more spacious look */
             border-radius: 10px;
-            max-width: 700px;
+            max-width: 600px;
             width: 90%;
-            margin: 0 auto; /* Centers the box */
-            box-sizing: border-box; /* Includes padding in width calculation */
+            text-align: center; /* Centers text within the box */
         }
         
         .content-box h2 {
@@ -80,67 +79,30 @@
             margin-top: 0;
         }
         
-        .content-box p, .content-box a {
+        .content-box p {
             font-size: 1.2rem;
             line-height: 1.5;
-        }
-
-        .content-box a {
-            color: #007bff; /* A nice blue for links */
-        }
-
-        .content-box a:hover {
-            text-decoration: underline;
-        }
-
-        /* Form styles */
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            margin-top: 1rem;
-            font-size: 1rem;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 0.8rem;
-            margin-top: 0.5rem;
-            border: 1px solid #ccc;
-            background: #f8f8f8;
-            color: black;
-            font-family: 'Courier New', Courier, monospace;
-            box-sizing: border-box;
+            margin: 1rem 0;
         }
         
-        textarea {
-            resize: vertical;
+        .content-box a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
         }
-
-        button {
-            margin-top: 1.5rem;
-            padding: 0.8rem 1.5rem;
-            background-color: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            font-family: 'Courier New', Courier, monospace;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #555;
+        
+        .content-box a:hover {
+            text-decoration: underline;
         }
 
         /* Responsive adjustments */
         @media screen and (max-width: 768px) {
             h1 {
                 font-size: 5rem;
+            }
+            .fixed-header-container {
+                top: 2%;
+                left: 2%;
             }
             .content-box h2 {
                 font-size: 2rem;
@@ -158,7 +120,7 @@
     </style>
 </head>
 <body>
-    <div class="header-container">
+    <div class="fixed-header-container">
         <h1>Drywall</h1>
         <div class="menu">
             <ul>
@@ -172,23 +134,10 @@
     
     <div class="content-box">
         <h2>Contact Us</h2>
-        <p>Ready to start your next drywall project? We're here to help! Reach out to us using the information below or fill out the contact form.</p>
-        <p><strong>Email:</strong> <a href="mailto:info@drywallco.com">info@drywallco.com</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+15551234567">(555) 123-4567</a></p>
-        <p><strong>Address:</strong> 123 Drywall Lane, Builder City, USA</p>
-        
-        <form>
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            
-            <button type="submit">Send Message</button>
-        </form>
+        <p>For bookings, press, or general inquiries, please reach out to us!</p>
+        <p><strong>Email:</strong> <a href="mailto:info@drywallband.com">info@drywallband.com</a></p>
+        <p><strong>Manager:</strong> Jane Doe, <a href="tel:+15551234567">(555) 123-4567</a></p>
+        <p>Follow us on <a href="#" target="_blank">Instagram</a>, <a href="#" target="_blank">Twitter</a>, and <a href="#" target="_blank">Facebook</a>!</p>
     </div>
 </body>
 </html>
