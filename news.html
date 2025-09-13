@@ -26,14 +26,14 @@
         /* Fixed container for the header and menu */
         .fixed-header-container {
             position: fixed;
-            /* FIX #2: Changed top from 5% to 25% for better vertical alignment */
-            top: 25%;
+            /* FIX #2: True vertical centering */
+            top: 50%;
+            transform: translateY(-50%);
             left: 5%;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             z-index: 100;
-            transition: transform 0.3s ease-in-out;
         }
 
         h1 {
@@ -65,7 +65,6 @@
             text-decoration: underline;
         }
 
-        /* Corrected alignment for the content box on desktop */
         .content-box {
             background-color: rgba(255, 255, 255, 0.9);
             color: black;
@@ -115,7 +114,6 @@
             text-decoration: underline;
         }
 
-        /* Hamburger button styles for mobile only */
         .menu-toggle {
             display: none;
         }
@@ -126,18 +124,17 @@
                 justify-content: flex-start;
                 padding: 0;
                 align-items: center;
-                transition: transform 0.3s ease-in-out;
             }
 
             .fixed-header-container {
                 position: fixed;
-                /* Reset top/left for the mobile slide-out menu */
                 top: 0;
                 left: 0;
                 height: 100%;
                 width: 70%;
                 background-color: rgba(0, 0, 0, 0.9);
                 padding: 20px;
+                /* This transform is for the slide-in, it overrides the desktop centering */
                 transform: translateX(-100%);
                 transition: transform 0.3s ease-in-out;
             }
@@ -161,15 +158,14 @@
                 cursor: pointer;
                 z-index: 102;
                 user-select: none;
-                /* Added color to the transition */
                 transition: left 0.3s ease-in-out, color 0.3s ease-in-out;
             }
             
-            /* FIX #1: Reposition the icon and change its color when the menu is open */
+            /* FIX #1: Move the icon to the right of the open menu */
             .menu-toggle.menu-open {
-                left: 20px; /* Position inside menu at top-left */
-                color: white; /* Make it visible */
-                text-shadow: none; /* Remove shadow when white */
+                left: calc(70% + 20px);
+                color: white;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
             }
 
             .content-box {
@@ -233,23 +229,6 @@
             <p>We're hitting the road this fall! Join us on tour in a city near you. Tickets are on sale now. Check our <a href="#" target="_blank">tour page</a> for a full list of dates and to purchase tickets.</p>
         </div>
         
-        <div class="news-item">
-            <h3>New Merch is Live!</h3>
-            <p class="news-date">August 20, 2025</p>
-            <p>The new line of Drywall merchandise is now available on our website! Grab a new t-shirt, hoodie, or vinyl record before they're gone. Head over to our <a href="#">merch store</a> to see the collection.</p>
-        </div>
-        
-        <div class="news-item">
-            <h3>Behind the Scenes: The Making of 'Echoes'</h3>
-            <p class="news-date">August 10, 2025</p>
-            <p>We've just released a mini-documentary about the creative process behind our upcoming album, 'Echoes.' See us in the studio, get a sneak peek at our new songs, and hear from the band about our inspirations. Watch it on our <a href="#">YouTube channel</a>!</p>
-        </div>
-        
-        <div class="news-item">
-            <h3>New Single 'Road to Nowhere' Out Now</h3>
-            <p class="news-date">July 25, 2025</p>
-            <p>Our new single 'Road to Nowhere' is officially here! It's the first taste of our new album and we hope you love it as much as we do. Stream it everywhere now!</p>
-        </div>
     </div>
 
     <script>
@@ -259,7 +238,6 @@
             menu.classList.toggle('menu-open');
             toggleButton.classList.toggle('menu-open');
 
-            // FIX #1: Add logic to change the icon to 'X' on open and back to '☰' on close
             if (toggleButton.classList.contains('menu-open')) {
                 toggleButton.innerHTML = '&times;';
             } else {
