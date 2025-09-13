@@ -1,29 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Drywall - Contact</title>
     <style>
-        html,
-        body {
+        html, body {
             margin: 0;
             padding: 0;
             height: 100%;
         }
 
-        .site-header {
-            font-size: 90px;
-            color: white;
-
-            margin: 0 0 40px 0;
-            visibility: hidden;
-        }
-
         body {
             font-family: 'Courier New', Courier, monospace;
-            background-image: url("IMG_0882-modified.jpg");
-            /* Replace with your image path */
+            background-image: url("IMG_0882-modified.jpg"); /* Replace with your image path */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -33,20 +22,28 @@
             position: relative;
         }
 
-        /* Left-aligned vertical menu */
-        .menu {
-            position: fixed;
-            /* stays pinned left */
+        /* Container for menu and header */
+        .container {
+            position: absolute;
             top: 20px;
-            left: 20px;
+            left: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
+        .container h1 {
+            font-size: 90px;
+            color: white;
+            margin: 0 0 40px 0;
+        }
+
+        /* Menu styles (matching home page) */
         .menu ul {
             list-style: none;
             padding: 0;
             display: flex;
             flex-direction: column;
-            /* vertical */
         }
 
         .menu ul li {
@@ -63,32 +60,53 @@
             text-decoration: underline;
         }
 
-        /* White box stays centered */
+        /* Contact box in center */
         .contact-box {
             background-color: rgba(255, 255, 255, 0.95);
             padding: 50px;
             max-width: 500px;
             width: 90%;
             text-align: left;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
 
+        .contact-box h2 {
+            font-size: 60px;
+            margin: 0 0 20px 0;
+            color: black;
+        }
+
+        .contact-box p,
+        .contact-box a {
+            font-size: 18px;
+            color: black;
+            line-height: 1.6;
+            text-decoration: none;
+        }
 
         .contact-box a:hover {
             text-decoration: underline;
         }
 
-        /* Responsive adjustments */
+        /* Responsive */
         @media screen and (max-width: 768px) {
+            .container {
+                left: 20px;
+            }
+
+            .container h1 {
+                font-size: 60px;
+            }
+
+            .menu ul li {
+                padding: 12px 0;
+            }
+
             .contact-box {
                 padding: 30px;
             }
 
-            h1 {
-                font-size: 60px;
-            }
-
-            .contact-box h1 {
+            .contact-box h2 {
                 font-size: 40px;
             }
 
@@ -99,31 +117,31 @@
         }
     </style>
 </head>
-
 <body>
-    <!-- Left-aligned vertical menu -->
-    <div class="menu">
-        <h1 class="site-header">Drywall</h1>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contactus.html">Contact</a></li>
-        </ul>
+    <!-- Same header/menu as home -->
+    <div class="container">
+        <h1>Drywall</h1>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contactus.html">Contact</a></li>
+            </ul>
+        </div>
     </div>
 
     <!-- Centered white contact box -->
     <div class="contact-box">
-        <h1>Contact Us</h1>
+        <h2>Contact Us</h2>
         <p>Email: <a href="mailto:contact@drywallband.com">contact@drywallband.com</a></p>
         <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
         <p>Address: 123 Main St, City, State</p>
         <p>Follow us on social media:</p>
         <p>
-            <a href="#">Instagram</a> |
+            <a href="#">Instagram</a> | 
             <a href="#">Email</a>
         </p>
     </div>
 </body>
-
 </html>
