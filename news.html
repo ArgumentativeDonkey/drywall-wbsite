@@ -114,12 +114,11 @@
             text-decoration: underline;
         }
 
-        /* Hide hamburger button on desktop */
+        /* Hamburger button styles for mobile only */
         .menu-toggle {
             display: none;
         }
 
-        /* Mobile specific styles for the swipable menu */
         @media screen and (max-width: 768px) {
             body {
                 flex-direction: column;
@@ -128,7 +127,7 @@
                 align-items: center;
                 transition: transform 0.3s ease-in-out;
             }
-
+            
             .fixed-header-container {
                 position: fixed;
                 top: 0;
@@ -162,15 +161,6 @@
                 user-select: none;
             }
 
-            .menu-toggle.menu-open {
-                color: white;
-                text-shadow: none;
-                position: fixed;
-                top: 25px;
-                right: 20px;
-                left: auto;
-            }
-
             .content-box {
                 margin-top: 2rem;
                 margin-left: 5%;
@@ -198,7 +188,7 @@
     </style>
 </head>
 <body>
-    <div class="menu-toggle" onclick="toggleMenu()" id="menu-toggle">☰</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <div class="fixed-header-container" id="menu-container">
         <h1>Drywall</h1>
         <div class="menu">
@@ -256,7 +246,6 @@
             const menu = document.getElementById('menu-container');
             const toggleButton = document.getElementById('menu-toggle');
             menu.classList.toggle('menu-open');
-            toggleButton.classList.toggle('menu-open');
         }
     </script>
 </body>
