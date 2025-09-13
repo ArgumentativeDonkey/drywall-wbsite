@@ -22,10 +22,10 @@
       align-items: center;
     }
 
-    /* Menu container pinned top-left with adjusted offset */
+    /* Menu container pinned top-left, matches Home page visual position */
     .container {
       position: absolute;
-      top: 120px;   /* bumped down to visually align with Home */
+      top: 200px; /* adjust this to match Home exactly */
       left: 40px;
       display: flex;
       flex-direction: column;
@@ -91,7 +91,7 @@
     @media screen and (max-width: 768px) {
       .container {
         left: 20px;
-        top: 80px; /* slightly less offset for smaller screens */
+        top: 160px; /* scale down for smaller screens */
       }
       .container h1 {
         font-size: 60px;
@@ -113,7 +113,6 @@
   </style>
 </head>
 <body>
-  <!-- Menu/Header -->
   <div class="container">
     <h1>Drywall</h1>
     <div class="menu">
@@ -126,7 +125,6 @@
     </div>
   </div>
 
-  <!-- Centered contact box -->
   <div class="contact-box">
     <h1>Contact Us</h1>
     <p>Email: <a href="mailto:contact@drywallband.com">contact@drywallband.com</a></p>
