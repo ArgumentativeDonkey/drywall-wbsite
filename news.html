@@ -26,7 +26,8 @@
         /* Fixed container for the header and menu */
         .fixed-header-container {
             position: fixed;
-            top: 5%;
+            /* FIX #2: Changed top from 5% to 25% for better vertical alignment */
+            top: 25%;
             left: 5%;
             display: flex;
             flex-direction: column;
@@ -130,6 +131,7 @@
 
             .fixed-header-container {
                 position: fixed;
+                /* Reset top/left for the mobile slide-out menu */
                 top: 0;
                 left: 0;
                 height: 100%;
@@ -159,11 +161,15 @@
                 cursor: pointer;
                 z-index: 102;
                 user-select: none;
-                transition: left 0.3s ease-in-out;
+                /* Added color to the transition */
+                transition: left 0.3s ease-in-out, color 0.3s ease-in-out;
             }
             
+            /* FIX #1: Reposition the icon and change its color when the menu is open */
             .menu-toggle.menu-open {
-                left: calc(70% - 60px);
+                left: 20px; /* Position inside menu at top-left */
+                color: white; /* Make it visible */
+                text-shadow: none; /* Remove shadow when white */
             }
 
             .content-box {
@@ -252,6 +258,13 @@
             const toggleButton = document.getElementById('menu-toggle');
             menu.classList.toggle('menu-open');
             toggleButton.classList.toggle('menu-open');
+
+            // FIX #1: Add logic to change the icon to 'X' on open and back to '☰' on close
+            if (toggleButton.classList.contains('menu-open')) {
+                toggleButton.innerHTML = '&times;';
+            } else {
+                toggleButton.innerHTML = '☰';
+            }
         }
     </script>
 </body>
