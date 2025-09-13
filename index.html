@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drywall</title>
     <style>
         html, body {
@@ -17,8 +18,8 @@
             background-position: center;
             background-repeat: no-repeat;
             display: flex;
-            align-items: center;       /* vertical centering */
-            justify-content: flex-start; /* horizontal: start from left */
+            align-items: center;
+            justify-content: flex-start;
         }
 
         /* Container for menu and header */
@@ -26,13 +27,13 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            padding-left: 40px;
+            padding-left: 5%; /* Fluid padding */
         }
 
         h1 {
-            font-size: 90px;
+            font-size: 8rem; /* Use rem for scalability */
             color: white;
-            margin: 0 0 40px 0; /* space below for menu if needed */
+            margin: 0 0 2rem 0; /* Use rem for spacing */
         }
 
         /* Menu styles */
@@ -40,14 +41,15 @@
             list-style: none;
             padding: 0;
             display: flex;
-            flex-direction: column; /* vertical */
+            flex-direction: column;
         }
 
         .menu ul li {
-            padding: 15px 0;
+            padding: 1rem 0;
         }
 
         .menu ul li a {
+            font-size: 1.5rem;
             color: white;
             text-decoration: none;
             display: block;
@@ -60,15 +62,18 @@
         /* Responsive adjustments */
         @media screen and (max-width: 768px) {
             h1 {
-                font-size: 60px;
+                font-size: 5rem;
             }
 
             .container {
-                padding-left: 20px;
+                padding-left: 5%;
             }
 
             .menu ul li {
-                padding: 12px 0;
+                padding: 0.8rem 0;
+            }
+            .menu ul li a {
+                font-size: 1.2rem;
             }
         }
     </style>
