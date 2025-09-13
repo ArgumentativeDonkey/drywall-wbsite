@@ -12,30 +12,33 @@ html, body {
   font-family: 'Courier New', Courier, monospace;
 }
 
-/* Background */
+/* Desktop background */
 body {
   background-image: url("IMG_0882-modified.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-/* Container for menu + header (desktop layout identical to Home) */
+/* Header + menu container (desktop alignment identical to Home) */
 .container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding-left: 40px;
-  padding-top: 40px;
+  padding-top: 40px; /* keeps menu + header at Home alignment */
 }
 
 .container h1 {
   font-size: 90px;
   color: white;
-  margin: 0 0 40px 0;
+  margin: 0 0 40px 0; /* spacing below header for menu */
 }
 
-/* Menu styles */
+/* Vertical menu */
 .menu ul {
   list-style: none;
   padding: 0;
@@ -57,15 +60,15 @@ body {
   text-decoration: underline;
 }
 
-/* Contact box (desktop centered horizontally below menu, does not move menu) */
+/* Contact box: horizontally centered, below menu without affecting desktop menu alignment */
 .contact-box {
-  background-color: rgba(255,255,255,0.95);
   max-width: 500px;
   width: 90%;
-  margin: 40px auto 0 auto; /* centers horizontally, top margin for spacing */
+  margin: 40px auto 0 auto; /* horizontal centering; vertical spacing below menu */
   padding: 50px;
-  text-align: left;
+  background-color: rgba(255,255,255,0.95);
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  text-align: left;
 }
 
 .contact-box h1 {
@@ -86,21 +89,17 @@ body {
   text-decoration: underline;
 }
 
-/* Mobile adjustments only */
+/* Mobile-only adjustments */
 @media screen and (max-width: 768px) {
-  .container {
-    padding-left: 20px;
-    padding-top: 20px;
-  }
   .container h1 {
-    font-size: 50px;
+    font-size: 50px; /* shrink header */
   }
   .menu ul li {
-    padding: 10px 0;
+    padding: 10px 0; /* shrink menu spacing */
   }
   .contact-box {
     padding: 30px;
-    margin-top: 20px; /* maintain spacing below menu */
+    margin-top: 20px; /* reduce vertical spacing for mobile */
   }
   .contact-box h1 {
     font-size: 40px;
@@ -114,7 +113,7 @@ body {
 </head>
 <body>
 
-<!-- Menu + Header -->
+<!-- Menu + Header (matches Home) -->
 <div class="container">
   <h1>Drywall</h1>
   <div class="menu">
