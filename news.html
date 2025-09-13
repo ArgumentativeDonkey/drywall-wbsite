@@ -118,7 +118,7 @@
         .menu-toggle {
             display: none;
         }
-
+        
         @media screen and (max-width: 768px) {
             body {
                 flex-direction: column;
@@ -127,7 +127,7 @@
                 align-items: center;
                 transition: transform 0.3s ease-in-out;
             }
-            
+
             .fixed-header-container {
                 position: fixed;
                 top: 0;
@@ -159,6 +159,13 @@
                 cursor: pointer;
                 z-index: 102;
                 user-select: none;
+                transition: left 0.3s ease-in-out;
+            }
+            
+            .menu-toggle.menu-open {
+                left: calc(70% - 60px);
+                color: white;
+                text-shadow: none;
             }
 
             .content-box {
@@ -188,7 +195,7 @@
     </style>
 </head>
 <body>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="menu-toggle" onclick="toggleMenu()" id="menu-toggle">☰</div>
     <div class="fixed-header-container" id="menu-container">
         <h1>Drywall</h1>
         <div class="menu">
@@ -246,6 +253,7 @@
             const menu = document.getElementById('menu-container');
             const toggleButton = document.getElementById('menu-toggle');
             menu.classList.toggle('menu-open');
+            toggleButton.classList.toggle('menu-open');
         }
     </script>
 </body>
