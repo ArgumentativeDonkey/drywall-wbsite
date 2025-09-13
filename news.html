@@ -20,12 +20,7 @@
             color: white;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            padding-left: 5%;
-        }
-
-        body.menu-open {
-            overflow: hidden;
+            justify-content: center;
         }
 
         /* Fixed container for the header and menu */
@@ -69,7 +64,7 @@
             text-decoration: underline;
         }
 
-        /* Content box for News */
+        /* Centered white box for news content */
         .content-box {
             background-color: rgba(255, 255, 255, 0.9);
             color: black;
@@ -119,17 +114,19 @@
             text-decoration: underline;
         }
 
-        /* Hamburger button styles for mobile only */
+        /* Hide hamburger button on desktop */
         .menu-toggle {
             display: none;
         }
 
+        /* Mobile specific styles for the swipable menu */
         @media screen and (max-width: 768px) {
             body {
                 flex-direction: column;
                 justify-content: flex-start;
                 padding: 0;
-                align-items: flex-start;
+                align-items: center;
+                transition: transform 0.3s ease-in-out;
             }
 
             .fixed-header-container {
