@@ -1,190 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>News - Drywall</title>
-<style>
-    html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font-family: 'Courier New', Courier, monospace;
-        background-image: url("IMG_0882-modified.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .fixed-header-container {
-        position: fixed;
-        top: 5%;
-        left: 5%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        z-index: 100;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    h1 {
-        font-size: 8rem;
-        color: white;
-        margin: 0 0 2rem 0;
-    }
-
-    .menu ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .menu ul li {
-        padding: 1rem 0;
-    }
-
-    .menu ul li a {
-        font-size: 1.5rem;
-        color: white;
-        text-decoration: none;
-        display: block;
-    }
-
-    .menu ul li a:hover {
-        text-decoration: underline;
-    }
-
-    .content-box {
-        background-color: rgba(255, 255, 255, 0.9);
-        color: black;
-        padding: 3rem;
-        border-radius: 10px;
-        max-width: 800px;
-        width: 90%;
-        box-sizing: border-box;
-        text-align: left;
-        margin-left: 20%;
-        max-height: 80vh;
-        overflow-y: auto;
-    }
-
-    .content-box h2 {
-        font-size: 3rem;
-        margin-top: 0;
-    }
-
-    .content-box h3 {
-        font-size: 1.8rem;
-        margin-top: 2rem;
-        margin-bottom: 0.5rem;
-        border-bottom: 2px solid #ccc;
-        padding-bottom: 0.5rem;
-    }
-
-    .content-box p {
-        font-size: 1rem;
-        line-height: 1.5;
-        margin: 1rem 0;
-    }
-
-    .content-box .news-date {
-        font-size: 0.9rem;
-        color: #666;
-        font-style: italic;
-    }
-
-    .content-box a {
-        color: #007bff;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    .content-box a:hover {
-        text-decoration: underline;
-    }
-
-    .menu-toggle {
-        display: none;
-    }
-
-    @media screen and (max-width: 768px) {
-        body {
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - Drywall</title>
+    <style>
+        html, body {
+            margin: 0;
             padding: 0;
+            height: 100%;
         }
 
-        h1 {
-            font-size: 4rem;
-        }
-
-        .menu-toggle {
-            display: block;
-            position: fixed;
-            top: 25px;
-            left: 20px;
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-image: url("IMG_0882-modified.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            z-index: 102;
-            user-select: none;
-            transition: left 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .menu-toggle.menu-open {
-            left: calc(70% - 60px);
-        }
-
+        /* Fixed container for the header and menu */
         .fixed-header-container {
             position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 70%;
-            background-color: rgba(0, 0, 0, 0.9);
-            padding: 20px;
-            transform: translateX(-100%);
+            top: 5%;
+            left: 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            z-index: 100;
             transition: transform 0.3s ease-in-out;
         }
 
-        .fixed-header-container.menu-open {
-            transform: translateX(0);
+        h1 {
+            font-size: 8rem;
+            color: white;
+            margin: 0 0 2rem 0;
         }
 
-        .content-box {
-            margin-top: 2rem;
-            margin-left: 5%;
-            margin-right: 5%;
-            width: 90%;
-            max-height: 60vh;
-        }
-
-        .content-box h2 {
-            font-size: 2rem;
+        /* Menu styles */
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
         }
 
         .menu ul li {
-            padding: 0.8rem 0;
+            padding: 1rem 0;
         }
 
         .menu ul li a {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            display: block;
         }
-    }
 
-    @media screen and (min-width: 769px) {
-        .menu ul {
-            flex-direction: row;
-            gap: 2rem;
+        .menu ul li a:hover {
+            text-decoration: underline;
         }
-    }
-</style>
+
+        /* Corrected alignment for the content box on desktop */
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: black;
+            padding: 3rem;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 90%;
+            box-sizing: border-box;
+            text-align: left;
+            margin-left: 20%; 
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .content-box h2 {
+            font-size: 3rem;
+            margin-top: 0;
+        }
+        
+        .content-box h3 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 0.5rem;
+        }
+
+        .content-box p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 1rem 0;
+        }
+
+        .content-box .news-date {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .content-box a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .content-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hamburger button styles for mobile only */
+        .menu-toggle {
+            display: none;
+        }
+        
+        @media screen and (max-width: 768px) {
+            body {
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 0;
+                align-items: center;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .fixed-header-container {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 70%;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 20px;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .fixed-header-container.menu-open {
+                transform: translateX(0);
+            }
+
+            h1 {
+                font-size: 4rem;
+            }
+            
+            .menu-toggle {
+                display: block;
+                position: fixed;
+                top: 25px;
+                left: 20px;
+                color: black;
+                text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+                font-size: 2rem;
+                cursor: pointer;
+                z-index: 102;
+                user-select: none;
+                transition: left 0.3s ease-in-out;
+            }
+            
+            .menu-toggle.menu-open {
+                left: calc(70% - 60px);
+            }
+
+            .content-box {
+                margin-top: 2rem;
+                margin-left: 5%;
+                margin-right: 5%;
+                width: 90%;
+                max-height: 60vh;
+            }
+
+            .content-box h2 {
+                font-size: 2rem;
+            }
+
+            .content-box p {
+                font-size: 1rem;
+            }
+
+            .menu ul li {
+                padding: 0.8rem 0;
+            }
+
+            .menu ul li a {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="menu-toggle" onclick="toggleMenu()" id="menu-toggle">☰</div>
@@ -206,37 +212,37 @@
         <div class="news-item">
             <h3>New Album 'Echoes' Out Now!</h3>
             <p class="news-date">October 15, 2025</p>
-            <p>Our brand new album, 'Echoes,' is officially out on all streaming platforms! Listen now on <a href="#" target="_blank">Spotify</a> and <a href="#" target="_blank">Apple Music</a>!</p>
+            <p>Our brand new album, 'Echoes,' is officially out on all streaming platforms! We've poured our hearts and souls into this project and can't wait for you to hear it. Listen now on <a href="#" target="_blank">Spotify</a> and <a href="#" target="_blank">Apple Music</a>!</p>
         </div>
 
         <div class="news-item">
             <h3>'City Lights' Music Video Dropping Soon</h3>
             <p class="news-date">September 28, 2025</p>
-            <p>Get ready! The official music video for our single 'City Lights' is coming next week. Stay tuned!</p>
+            <p>Get ready! The official music video for our single 'City Lights' is coming next week. We had an incredible time filming it and we're so excited to share the visuals with you all. Stay tuned!</p>
         </div>
 
         <div class="news-item">
             <h3>Drywall Announces Fall Tour Dates</h3>
             <p class="news-date">September 5, 2025</p>
-            <p>We're hitting the road this fall! Check our <a href="#" target="_blank">tour page</a> for dates and tickets.</p>
+            <p>We're hitting the road this fall! Join us on tour in a city near you. Tickets are on sale now. Check our <a href="#" target="_blank">tour page</a> for a full list of dates and to purchase tickets.</p>
         </div>
-
+        
         <div class="news-item">
             <h3>New Merch is Live!</h3>
             <p class="news-date">August 20, 2025</p>
-            <p>Grab new t-shirts, hoodies, and vinyl at our <a href="#">merch store</a>.</p>
+            <p>The new line of Drywall merchandise is now available on our website! Grab a new t-shirt, hoodie, or vinyl record before they're gone. Head over to our <a href="#">merch store</a> to see the collection.</p>
         </div>
-
+        
         <div class="news-item">
             <h3>Behind the Scenes: The Making of 'Echoes'</h3>
             <p class="news-date">August 10, 2025</p>
-            <p>Watch a mini-documentary about our album on our <a href="#">YouTube channel</a>.</p>
+            <p>We've just released a mini-documentary about the creative process behind our upcoming album, 'Echoes.' See us in the studio, get a sneak peek at our new songs, and hear from the band about our inspirations. Watch it on our <a href="#">YouTube channel</a>!</p>
         </div>
-
+        
         <div class="news-item">
             <h3>New Single 'Road to Nowhere' Out Now</h3>
             <p class="news-date">July 25, 2025</p>
-            <p>Stream our new single everywhere now!</p>
+            <p>Our new single 'Road to Nowhere' is officially here! It's the first taste of our new album and we hope you love it as much as we do. Stream it everywhere now!</p>
         </div>
     </div>
 
