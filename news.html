@@ -20,12 +20,7 @@
             color: white;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            padding-left: 5%;
-        }
-
-        body.menu-open {
-            overflow: hidden;
+            justify-content: center;
         }
 
         /* Fixed container for the header and menu */
@@ -119,13 +114,18 @@
             text-decoration: underline;
         }
 
+        /* Hide hamburger on desktop */
+        .menu-toggle {
+            display: none;
+        }
+
         /* Mobile specific styles for the swipable menu */
         @media screen and (max-width: 768px) {
             body {
                 flex-direction: column;
                 justify-content: flex-start;
                 padding: 0;
-                align-items: flex-start;
+                align-items: center;
             }
 
             .fixed-header-container {
@@ -249,3 +249,14 @@
             <p>Our new single 'Road to Nowhere' is officially here! It's the first taste of our new album and we hope you love it as much as we do. Stream it everywhere now!</p>
         </div>
     </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu-container');
+            const toggleButton = document.getElementById('menu-toggle');
+            menu.classList.toggle('menu-open');
+            toggleButton.classList.toggle('menu-open');
+        }
+    </script>
+</body>
+</html>
