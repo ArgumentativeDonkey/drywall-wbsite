@@ -5,26 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>News - Drywall</title>
 <style>
-    /* Reset & base styles */
     html, body {
-        height: 100%;
-        min-height: 100vh;
         margin: 0;
         padding: 0;
+        height: 100%;
         font-family: 'Courier New', Courier, monospace;
-        background: url("IMG_0882-modified.jpg") center/cover no-repeat;
+        background-image: url("IMG_0882-modified.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    body::before {
-        content: '';
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background-color: rgba(0,0,0,0.5);
-        z-index: -1;
-    }
-
-    /* Fixed header & menu container */
     .fixed-header-container {
         position: fixed;
         top: 5%;
@@ -37,32 +32,35 @@
     }
 
     h1 {
-        font-size: clamp(3rem, 8vw, 8rem);
+        font-size: 8rem;
+        color: white;
         margin: 0 0 2rem 0;
     }
 
     .menu ul {
         list-style: none;
         padding: 0;
-        margin: 0;
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+    }
+
+    .menu ul li {
+        padding: 1rem 0;
     }
 
     .menu ul li a {
         font-size: 1.5rem;
         color: white;
         text-decoration: none;
+        display: block;
     }
 
     .menu ul li a:hover {
         text-decoration: underline;
     }
 
-    /* Content box */
     .content-box {
-        background-color: rgba(255,255,255,0.9);
+        background-color: rgba(255, 255, 255, 0.9);
         color: black;
         padding: 3rem;
         border-radius: 10px;
@@ -70,7 +68,7 @@
         width: 90%;
         box-sizing: border-box;
         text-align: left;
-        margin: 5% auto 5% auto;
+        margin-left: 20%;
         max-height: 80vh;
         overflow-y: auto;
     }
@@ -110,18 +108,16 @@
         text-decoration: underline;
     }
 
-    /* Hamburger menu toggle (hidden on desktop) */
     .menu-toggle {
         display: none;
     }
 
-    /* Mobile styles */
     @media screen and (max-width: 768px) {
         body {
-            display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
+            padding: 0;
         }
 
         h1 {
@@ -139,8 +135,6 @@
             z-index: 102;
             user-select: none;
             transition: left 0.3s ease-in-out;
-            aria-expanded: "false";
-            tabindex: 0;
         }
 
         .menu-toggle.menu-open {
@@ -153,7 +147,7 @@
             left: 0;
             height: 100%;
             width: 70%;
-            background-color: rgba(0,0,0,0.9);
+            background-color: rgba(0, 0, 0, 0.9);
             padding: 20px;
             transform: translateX(-100%);
             transition: transform 0.3s ease-in-out;
@@ -164,7 +158,9 @@
         }
 
         .content-box {
-            margin: 120px 5% 5% 5%;
+            margin-top: 2rem;
+            margin-left: 5%;
+            margin-right: 5%;
             width: 90%;
             max-height: 60vh;
         }
@@ -173,16 +169,15 @@
             font-size: 2rem;
         }
 
-        .menu ul li a {
-            font-size: 1.2rem;
-        }
-
         .menu ul li {
             padding: 0.8rem 0;
         }
+
+        .menu ul li a {
+            font-size: 1.2rem;
+        }
     }
 
-    /* Horizontal menu on desktop */
     @media screen and (min-width: 769px) {
         .menu ul {
             flex-direction: row;
@@ -193,7 +188,6 @@
 </head>
 <body>
     <div class="menu-toggle" onclick="toggleMenu()" id="menu-toggle">☰</div>
-
     <div class="fixed-header-container" id="menu-container">
         <h1>Drywall</h1>
         <div class="menu">
@@ -205,34 +199,40 @@
             </ul>
         </div>
     </div>
-
+    
     <div class="content-box">
         <h2>Latest News</h2>
+        
         <div class="news-item">
             <h3>New Album 'Echoes' Out Now!</h3>
             <p class="news-date">October 15, 2025</p>
             <p>Our brand new album, 'Echoes,' is officially out on all streaming platforms! Listen now on <a href="#" target="_blank">Spotify</a> and <a href="#" target="_blank">Apple Music</a>!</p>
         </div>
+
         <div class="news-item">
             <h3>'City Lights' Music Video Dropping Soon</h3>
             <p class="news-date">September 28, 2025</p>
-            <p>The official music video for our single 'City Lights' is coming next week. Stay tuned!</p>
+            <p>Get ready! The official music video for our single 'City Lights' is coming next week. Stay tuned!</p>
         </div>
+
         <div class="news-item">
             <h3>Drywall Announces Fall Tour Dates</h3>
             <p class="news-date">September 5, 2025</p>
             <p>We're hitting the road this fall! Check our <a href="#" target="_blank">tour page</a> for dates and tickets.</p>
         </div>
+
         <div class="news-item">
             <h3>New Merch is Live!</h3>
             <p class="news-date">August 20, 2025</p>
             <p>Grab new t-shirts, hoodies, and vinyl at our <a href="#">merch store</a>.</p>
         </div>
+
         <div class="news-item">
             <h3>Behind the Scenes: The Making of 'Echoes'</h3>
             <p class="news-date">August 10, 2025</p>
             <p>Watch a mini-documentary about our album on our <a href="#">YouTube channel</a>.</p>
         </div>
+
         <div class="news-item">
             <h3>New Single 'Road to Nowhere' Out Now</h3>
             <p class="news-date">July 25, 2025</p>
@@ -244,9 +244,8 @@
         function toggleMenu() {
             const menu = document.getElementById('menu-container');
             const toggleButton = document.getElementById('menu-toggle');
-            const isOpen = menu.classList.toggle('menu-open');
+            menu.classList.toggle('menu-open');
             toggleButton.classList.toggle('menu-open');
-            toggleButton.setAttribute('aria-expanded', isOpen);
         }
     </script>
 </body>
