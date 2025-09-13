@@ -17,21 +17,18 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            color: white;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: center; /* vertical centering */
+            justify-content: flex-start; /* horizontal: start from left */
+            color: white;
+            padding-left: 5%;
         }
 
-        /* Fixed container for the header and menu */
-        .fixed-header-container {
-            position: fixed;
-            top: 5%;
-            left: 5%;
+        /* Container for menu and header */
+        .container {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            z-index: 100;
         }
 
         h1 {
@@ -63,64 +60,64 @@
             text-decoration: underline;
         }
 
-        /* Centered white box for contact content */
+        /* White box for contact content, now aligned with other content */
         .content-box {
             background-color: rgba(255, 255, 255, 0.9);
             color: black;
-            padding: 3rem;
+            padding: 2rem;
             border-radius: 10px;
             max-width: 600px;
             width: 90%;
-            text-align: center;
+            margin-left: 5%; /* Aligns the box to the right of the menu content */
+            box-sizing: border-box;
         }
-
+        
         .content-box h2 {
             font-size: 3rem;
             margin-top: 0;
         }
-
+        
         .content-box p {
             font-size: 1.2rem;
             line-height: 1.5;
             margin: 1rem 0;
         }
-
+        
         .content-box a {
             color: #007bff;
             text-decoration: none;
             font-weight: bold;
         }
-
+        
         .content-box a:hover {
             text-decoration: underline;
         }
 
         /* Responsive adjustments */
         @media screen and (max-width: 768px) {
-            body {
-                flex-direction: column; /* Stacks items vertically on mobile */
-                justify-content: flex-start; /* Aligns content to the top */
-                padding: 2rem 0; /* Adds vertical spacing */
-            }
-
-            .fixed-header-container {
-                position: static; /* Removes fixed position on mobile */
-                align-self: flex-start; /* Keeps the menu aligned to the left */
-                margin-left: 5%;
-            }
-
-            .content-box {
-                margin-top: 2rem; /* Adds space between menu and content box */
-            }
-
             h1 {
                 font-size: 5rem;
             }
 
+            body {
+                flex-direction: column; /* Stacks items vertically on mobile */
+                align-items: flex-start; /* Keeps content aligned left */
+                padding-top: 2rem;
+            }
+
+            .container {
+                align-items: flex-start; /* Ensure alignment for the menu */
+            }
+
+            .content-box {
+                margin-left: 0;
+                margin-top: 2rem;
+            }
+            
             .content-box h2 {
                 font-size: 2rem;
             }
-
+            
             .content-box p {
                 font-size: 1rem;
             }
@@ -136,7 +133,7 @@
     </style>
 </head>
 <body>
-    <div class="fixed-header-container">
+    <div class="container">
         <h1>Drywall</h1>
         <div class="menu">
             <ul>
@@ -147,7 +144,7 @@
             </ul>
         </div>
     </div>
-
+    
     <div class="content-box">
         <h2>Contact Us</h2>
         <p>For bookings, press, or general inquiries, please reach out to us!</p>
