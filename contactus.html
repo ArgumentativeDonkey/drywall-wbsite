@@ -12,7 +12,7 @@
 
     body {
       font-family: 'Courier New', Courier, monospace;
-      background-image: url("IMG_0882-modified.jpg"); /* Replace with your image path */
+      background-image: url("IMG_0882-modified.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -22,10 +22,10 @@
       align-items: center;
     }
 
-    /* Menu container pinned top-left */
+    /* Menu container pinned top-left with adjusted offset */
     .container {
       position: absolute;
-      top: 20px;
+      top: 120px;   /* bumped down to visually align with Home */
       left: 40px;
       display: flex;
       flex-direction: column;
@@ -33,12 +33,11 @@
     }
 
     .container h1 {
-      font-size: 90px; /* match home */
+      font-size: 90px;
       color: white;
-      margin: 0 0 40px 0; /* match home */
+      margin: 0 0 40px 0;
     }
 
-    /* Menu styles (same as home) */
     .menu ul {
       list-style: none;
       padding: 0;
@@ -48,7 +47,7 @@
     }
 
     .menu ul li {
-      padding: 15px 0; /* match home */
+      padding: 15px 0;
     }
 
     .menu ul li a {
@@ -61,7 +60,7 @@
       text-decoration: underline;
     }
 
-    /* Centered white contact box */
+    /* Contact box */
     .contact-box {
       background-color: rgba(255, 255, 255, 0.95);
       padding: 50px;
@@ -89,13 +88,16 @@
       text-decoration: underline;
     }
 
-    /* Responsive */
     @media screen and (max-width: 768px) {
+      .container {
+        left: 20px;
+        top: 80px; /* slightly less offset for smaller screens */
+      }
       .container h1 {
-        font-size: 60px; /* match home */
+        font-size: 60px;
       }
       .menu ul li {
-        padding: 12px 0; /* match home */
+        padding: 12px 0;
       }
       .contact-box {
         padding: 30px;
